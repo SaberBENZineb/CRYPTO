@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./news.css";
 
 const News = () => {
-  // c4a5b084f0d340359362caf7166170ec
-
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -16,11 +14,10 @@ const News = () => {
     let dateFormatee = jour + '-' + mois + '-' + annee;
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=crypto&from=${dateFormatee}&sortBy=publishedAt&apiKey=a3cad12d113e439aade0824483111318`
+        `https://newsapi.org/v2/everything?q=crypto&from=${dateFormatee}&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
         setNews(res.data.articles);
-        console.log(res)
       });
   }, []);
   return (

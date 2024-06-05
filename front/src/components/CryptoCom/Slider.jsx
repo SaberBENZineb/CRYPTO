@@ -8,9 +8,9 @@ const Slider = () => {
         const res = await fetch(`https://openapiv1.coinstats.app/coins?page=0&limit=10`, {
           method: 'GET',
           headers: {
-            'Accept': 'application/json',
-            'X-Api-Key': 'S7PGjAyEX14J4AlktnGT/uPKsqU+3jgpdcQie0lKJWA=',
-            'Host': 'openapiv1.coinstats.app',
+            'Accept': process.env.REACT_APP_ACCEPT,
+            'X-Api-Key': process.env.REACT_APP_X_API_KEY,
+            'Host': process.env.REACT_APP_HOST
           },
         });
 
@@ -19,10 +19,8 @@ const Slider = () => {
         }
 
         const data = await res.json();
-        console.log(data);
         
         setCrypto(data.result);
-        console.log(data.result.key);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

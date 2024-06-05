@@ -9,9 +9,9 @@ const Bottom = () => {
         const res = await fetch(`https://openapiv1.coinstats.app/coins?limit=15`, {
           method: 'GET',
           headers: {
-            'Accept': 'application/json',
-            'X-Api-Key': 'S7PGjAyEX14J4AlktnGT/uPKsqU+3jgpdcQie0lKJWA=',
-            'Host': 'openapiv1.coinstats.app',
+            'Accept': process.env.REACT_APP_ACCEPT,
+            'X-Api-Key': process.env.REACT_APP_X_API_KEY,
+            'Host': process.env.REACT_APP_HOST
           },
         });
 
@@ -20,7 +20,6 @@ const Bottom = () => {
         }
 
         const data = await res.json();
-        console.log(data);
         let top10Crypto=null;
         if (Array.isArray(data.result) && data.result.length > 0) {
           const sortedCryptoList = data.result.sort((a, b) => b.price - a.price);

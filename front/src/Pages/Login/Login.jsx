@@ -19,12 +19,10 @@ const Login = () => {
         if (res.data.success) {
           toast.success(res.data.message);
           await new Promise(resolve => setTimeout(resolve, 5000));//wait
-          console.log('OK');
           setEmail('');
           setPass('');
           window.location.reload();
         }else{
-          console.log('KO');
           toast.error(res.data.message);
         }
       }catch(error){

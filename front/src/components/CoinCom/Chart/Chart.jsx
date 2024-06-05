@@ -40,7 +40,6 @@ const Chart = () => {
     const { data } = await axios.get(HistoricalChart(id, days));
     setflag(true);
     setHistoricData(data.prices);
-    console.log('api data',data.prices);
   };
   const fetchPredictCoin = async () => {
     try {
@@ -56,7 +55,6 @@ const Chart = () => {
       const data = await response.json();
       setflag(true);
       setHistoricData(data);
-      console.log('Predicted Data:', data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
