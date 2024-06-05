@@ -1,0 +1,37 @@
+body {
+    background-color: #16171a;
+  }
+  
+  .logo-section {
+    width: 40%;
+    justify-content: center;
+    align-items: left;
+    text-align: center;
+    font-family: "Gill Sans" sans-serif;
+    font-size: 24px;
+    color: white;
+    margin-top: 35px;
+  }
+  
+  .links {
+    width: 70%;
+    color: white;
+    margin-top: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .list {
+    list-style-type: none;
+  }
+  .list li {
+    display: inline;
+    margin: 2rem;
+  }
+  
+  .btn:hover {
+    background-color: #0066cc;
+    color: white;
+  }
+ 
